@@ -1,0 +1,42 @@
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+## Personal aliases
+
+# alias kj='gvim /tmp/jrnl' 
+# alias kj-up='rsync -v /home/kaleb/journal/journal.txt olson@ko.bd.to:/home/olson/journal/journal.txt'
+# alias pi-up='rsync -v /home/kaleb/journal/journal.txt pi:/home/olson/journal/journal.txt'
+# alias kj-dl=' rsync -v olson@ko.bd.to:/home/olson/journal/journal.txt /home/kaleb/journal/journal.txt' 
+# alias pi='mosh olson@pi --ssh="ssh -p 56777" -- tmux a'
+
+alias emt='emacsclient -t'
+
+## Personal functions
+
+emc() {emacsclient -c "$*" & disown}
+emw() {emacsclient "$*" & disown}
+wcd() {latexmk -pvc -pdf "$*"}
+
+# zstyle ':prezto:load' pmodule \
+#   'environment' \
+#   'terminal' \
+#   'syntax-highlighting' \
+#   'editor' \
+#   'history' \
+#   'history-substring-search' \
+#   'directory' \
+#   'spectrum' \
+#   'utility' \
+#   'completion' \
+#   'git' \
+#   'prompt'
