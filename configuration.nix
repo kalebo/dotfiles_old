@@ -70,10 +70,11 @@ nixpkgs.config = {
 
    # EDITORS
    vim emacs
+   aspell
 
    # AUTHORING
-   texLiveFull
-   texLivePGF
+   #texLiveFull
+   #texLivePGF
 
    # PROGRAMMING
    python34Packages.ipython
@@ -82,16 +83,14 @@ nixpkgs.config = {
    python34
    scons
    python
+   mysqlWorkbench
 
    # SYSTEM
    git zsh tmux htop sudo mtr nmap git subversion wget openssh cifs_utils
-   mesa_drivers mesa_noglu
-
-   # KDE GUI
-   quassel_qt5
+   #mesa_drivers mesa_noglu
 
    # GTK GUI
-   gimp inkscape
+   gimp inkscape mypaint
 
 
 
@@ -103,7 +102,7 @@ nixpkgs.config = {
   # List services that you want to enable:
 
   hardware.pulseaudio.enable = true;
-  services.virtualboxGuest.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
   services.openssh.enable = true;
   services.printing = {
       enable = true;
@@ -130,17 +129,14 @@ nixpkgs.config = {
   services.xserver = {
     enable = true;
     layout = "dvorak";
+    xkbOptions = "terminate:ctrl_alt_bksp, compose:caps";
+    wacom.enable = true;
 
     # Enable bspwm
     windowManager = {
       bspwm.enable = true;
     };
 
-    # Enable the KDE Desktop Environment.
-    displayManager.auto.enable = false;
-    displayManager.auto.user = "kalebo";
-    desktopManager.kde5.enable = false;
-    # xkbOptions = "eurosign:e";
   };
 
 
