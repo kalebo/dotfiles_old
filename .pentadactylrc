@@ -1,0 +1,10 @@
+"hg7207
+
+loadplugins '\.(js|penta)$'
+group user
+set cdpath=''
+set defsearch=duckduckgoog
+set guioptions=bCrsN
+set hintkeys=aoeuidhtns
+
+" vim: set ft=pentadactyl:
