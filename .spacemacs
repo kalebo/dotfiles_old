@@ -21,5 +21,9 @@ This function is called at the very end of Spacemacs initialization."
   (setq-default evil-escape-delay 0.2)
 ;; List of configuration layers to load.
   )
-(setq-default dotspacemacs-configuration-layers '(slime latex go web react php rust))
+(setq-default dotspacemacs-configuration-layers '(
+                                                  yaml
+                                                  markdown
+                                                  python
+                                                  markdownslime latex go web react php rust magit))
 
