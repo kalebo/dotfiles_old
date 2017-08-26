@@ -1,4 +1,4 @@
-execute pathogen#infect()
+"execute pathogen#infect()
 "------------------------------- Moving around -----------------------------
 
 nnoremap k gk
