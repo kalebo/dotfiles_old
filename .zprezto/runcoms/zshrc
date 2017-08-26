@@ -40,3 +40,5 @@ wcd() {latexmk -pvc -pdf "$*"}
 #   'completion' \
 #   'git' \
 #   'prompt'
+
+export PATH="$HOME/.yarn/bin:$PATH"

@@ -33,9 +33,9 @@ fi
 # Paths
 #
 
-export SHELL="/run/current-system/sw/bin/zsh"
+export SHELL="/usr/bin/zsh"
 # export PANEL_FIFO="/tmp/panel-fifo"
-export PATH=$PATH:/home/kalebo/bin
+export PATH=$PATH:/home/kalebo/bin:/home/kalebo/.cargo/bin
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
@@ -76,3 +76,5 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+export RUST_SRC_PATH=/home/kalebo/packages/rustc-1.8.0/src
