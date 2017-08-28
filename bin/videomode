@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+
+if [ $1 = 'on' ]; then
+	pkill compton
+	xset s off
+	xset s noblank
+	xset -dpms
+	compton --backend glx --paint-on-overlay --vsync opengl-swc&
+elif [ $1 = 'off' ]; then
+	pkill compton
+	xset s on
+	xset s blank
+	xset +dpms
+	compton&
+else
+	exit
+fi
