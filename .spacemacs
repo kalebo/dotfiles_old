@@ -1,5 +1,4 @@
 (setq dotspacemacs-mode-line-unicode-symbols nil)
-(setq-default dotspacemacs-themes '(solarized-dark))
 (setq paradox-github-token '1664862593973bce0d5eb9f4cf4effe0e9e4226d)
 (setq-default dotspacemacs-default-font '("Fira Code"
                                           :size 12
@@ -24,7 +23,7 @@ This function is called at the very end of Spacemacs initialization."
                                                   javascript
                                                   html
                                                   markdown
-                                                  markdowncommon-lisp rust latex go elm java python auto-completion spell-checking))
+                                                  rust latex go elm java python auto-completion spell-checking))
 
 (setq eclim-eclipse-dirs "/opt/eclipse"
       eclim-executable "/opt/eclipse/eclim")

@@ -1,4 +1,5 @@
-"execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
 "------------------------------- Moving around -----------------------------
 
 nnoremap k gk
