@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+## USAGE
+#
+#  <command> <externalDisplay> <on | off> <left, right, top, bottom>
+
+# Yes I'm using globals in a bash script
+defaultDisplay="LVDS1"
+externalDisplay=""
+displayPosition=""
+
+firstSetDesktops="I II III IV V"
+secondSetDesktops="VI VII VIII IX X"
+
+function turnOn {
+    xrandr --output $externalDisplay $displayPosition $defaultDisplay --auto
+    xrandr --output $defaultDisplay --primary
+    bspc monitor $defaultDisplay -d $firstSetDesktops
+    bspc monitor $externalDisplay -d $secondSetDesktops
+}
+
+function turnOff {
+    xrandr --output $externalDisplay --off
+    xrandr --output $defaultDisplay --primary
+    bspc monitor $defaultDisplay -r $firstSetDesktops
+    bspc monitor $externalDisplay -r $secondSetDesktops
+    bspc monitor $defaultDisplay -d $firstSetDesktops $secondSetDesktops
+}
+
+if [ $1 = 'vga' ];  then
+    externalDisplay='VGA1'
+elif [ $1 = 'hdmi' ]; then
+    externalDisplay='HDMI1'
+elif [ $1 = 'dp' ]; then
+    externalDisplay='DP1'
+else
+    exit
+fi
+
+if [ $2 = 'on' ]; then
+    if [ $3 = 'left' ]; then
+        displayPosition='--left-of'
+    elif [ $3 = 'right' ]; then
+        displayPosition='--right-of'
+    elif [ $3 = 'top' ]; then
+        displayPosition='--above'
+    elif [ $3 = 'bottom' ]; then
+        displayPosition='--below'
+    else
+        exit
+    fi
+    turnOn
+elif [ $2 = 'off' ]; then
+	  turnOff
+else
+    exit
+fi
+
