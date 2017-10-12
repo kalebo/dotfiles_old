@@ -42,3 +42,6 @@ wcd() {latexmk -pvc -pdf "$*"}
 #   'prompt'
 
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/home/kalebo/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
