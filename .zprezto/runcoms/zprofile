@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export VISUAL='emacs'
-export EDITOR='emacs'
+export VISUAL='vim'
+export EDITOR='vim'
 export PAGER='less'
 
 #
@@ -78,3 +78,5 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 export RUST_SRC_PATH=/home/kalebo/packages/rustc-1.8.0/src
+
+export PATH="$HOME/.cargo/bin:$PATH"

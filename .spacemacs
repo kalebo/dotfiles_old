@@ -1,7 +1,7 @@
 (setq dotspacemacs-mode-line-unicode-symbols nil)
 (setq paradox-github-token '1664862593973bce0d5eb9f4cf4effe0e9e4226d)
 (setq-default dotspacemacs-default-font '("Fira Code"
-                                          :size 12
+                                          :size 18
                                           :weight normal
                                           :width normal
                                           :powerline-scale 1.1))
@@ -20,6 +20,7 @@ This function is called at the very end of Spacemacs initialization."
 ;; List of configuration layers to load.
   )
 (setq-default dotspacemacs-configuration-layers '(
+                                                  csv
                                                   javascript
                                                   html
                                                   markdown
