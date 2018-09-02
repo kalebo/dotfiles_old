@@ -5,7 +5,7 @@
 #  <command> <externalDisplay> <on | off> <left, right, top, bottom>
 
 # Yes I'm using globals in a bash script
-defaultDisplay="LVDS1"
+defaultDisplay="LVDS-1"
 externalDisplay=""
 displayPosition=""
 
@@ -28,11 +28,11 @@ function turnOff {
 }
 
 if [ $1 = 'vga' ];  then
-    externalDisplay='VGA1'
+    externalDisplay='VGA-1'
 elif [ $1 = 'hdmi' ]; then
-    externalDisplay='HDMI1'
+    externalDisplay='HDMI-1'
 elif [ $1 = 'dp' ]; then
-    externalDisplay='DP1'
+    externalDisplay='DP-1'
 else
     exit
 fi

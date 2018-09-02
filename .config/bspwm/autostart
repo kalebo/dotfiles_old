@@ -1,11 +1,13 @@
+wal -R &
 xrdb .Xdefaults &
 sxhkd &
-feh --bg-tile bg.png --bg-tile bg.png &
+#feh --bg-tile bg.png --bg-tile bg.png &
 #panel &
 #trayer --expand true --transparent true  --alpha 185 --height 16 --edge top --align right --expand true --SetDockType true --widthtype request --margin 70 &
 xfce4-panel &
 clipit &
 nm-applet &
-compton & 
+xfce4-power-manager &
+compton -c & 
 sh .xinitrc & 
 #exec bspwm

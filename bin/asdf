@@ -1,1 +1,3 @@
-setxkbmap dvorak
+setxkbmap dvorak -option caps:escape
+killall sxhkd
+sxhkd&
