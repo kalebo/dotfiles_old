@@ -8,6 +8,6 @@ xfce4-panel &
 clipit &
 nm-applet &
 xfce4-power-manager &
-compton -c & 
+compton -b & 
 sh .xinitrc & 
 #exec bspwm
