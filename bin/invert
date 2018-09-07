@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+FOCUSED=$(bspc query --nodes --node focused)
+INVERTED=$(cat ~/.inverted)
+if echo $INVERTED | grep -q $FOCUSED ; then
+    INVERTED=$(echo -n $INVERTED | sed "s/$FOCUSED//g") # echo -n keeps out trailing newlines
+else
+    INVERTED="$INVERTED $FOCUSED"
+    INVERTED=$(echo -n $INVERTED | xargs) # xargs trims the whitespace
+fi
+if [ -z "$INVERTED" ]; then
+    echo "I'm here!"
+    CONDSTR=""
+    pkill compton; compton &
+else
+    CONDSTR=$(echo -n $INVERTED | sed 's/[^ ]*/id=&/g')
+    CONDSTR=$(echo -n $CONDSTR  | sed 's/ /||/g')
+    pkill compton; compton --invert-color-include "$CONDSTR" &
+fi
+echo -n $INVERTED > ~/.inverted
